@@ -61,13 +61,12 @@ public class alerter {
             }
         }
         else{
-            // Commenting below line for and setting dev environment for temporary run
+            // Commenting below line for setting dev environment for temporary run
             // throw new Exception("Environment setting not available!!");
             env = "dev";
         }
 
-        // Alternate solution to set environment
-        // setEnvironment();
+        // Alternate solution to set environment - setEnvironment();
 
         testAlertInCelsius();
         System.out.printf("%d alerts failed.\n", alertFailureCount);
