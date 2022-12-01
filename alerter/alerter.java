@@ -30,6 +30,7 @@ public class alerter {
         alertInCelsius(-600.0f);
         assert(alertFailureCount == 1);
     }
+
     public static void main(String[] args) throws Exception {
         //  Environment passed in args,
         //  values - prod/dev
