@@ -24,13 +24,14 @@ public class misaligned {
         int result = printColorMap();
         assert(result == 25);
 
-        // testing individual cases
         String colorPairStr;
+        // double-digit pair number check
         colorPairStr = getColorPairFromIndex(4,4);
         assert(colorPairStr.contains("Violet") && colorPairStr.contains("Slate"));
         assert(colorPairStr.substring(3,4).equals("|"));
         assert(colorPairStr.contains("25"));
 
+        // single-digit pair number check
         colorPairStr = getColorPairFromIndex(0,1);
         assert(colorPairStr.contains("Orange") && colorPairStr.contains("White"));
         assert(colorPairStr.substring(3,4).equals("|"));
