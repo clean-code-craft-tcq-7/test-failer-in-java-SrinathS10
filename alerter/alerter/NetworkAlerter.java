@@ -1,3 +1,4 @@
+package alerter;
 public class NetworkAlerter {
 
     // Dummy function call for production call
