@@ -3,6 +3,26 @@ package alerter;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+@FunctionalInterface
+interface NetworkAlertInterface {
+    int networkAlert(float fahrenheit);
+}
+
+class NetworkAlerter {
+    // Dummy function call for production call
+    static int networkAlert(float celsius){
+        return 200;
+    }
+
+    static int networkAlertStub(float celsius) {
+        System.out.println("ALERT: Temperature is " + celsius + " celsius");
+        if(celsius < -273.15f){
+            return 500;
+        }
+        return 200;
+    }
+}
+
 public class alerter {
     static int alertFailureCount = 0;
     private static String env;
