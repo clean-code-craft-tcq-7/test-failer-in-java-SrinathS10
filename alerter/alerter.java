@@ -9,13 +9,9 @@ public class alerter {
     private static Properties config;
     static NetworkAlertInterface networkAlertInterface;
 
-    static int networkAlert(float celsius){
-        return 200;
-    }
-  
     static void alertInCelsius(float fahrenheit) {
         float celsius = (fahrenheit - 32) * 5 / 9;
-        int returnCode = networkAlert(celsius);
+        int returnCode = networkAlertInterface.networkAlert(celsius);
         if (returnCode != 200) {
             alertFailureCount += 1;
         }
@@ -40,8 +36,7 @@ public class alerter {
 
     public static void main(String[] args) {
         try {
-            //  Environment passed in args,
-            //  values - prod/dev
+            //  Environment passed in args, values - prod/dev
             if (args.length > 0) {
                 env = args[0];
             } else {
@@ -51,16 +46,16 @@ public class alerter {
             }
             // Alternate solution to set environment - setEnvironment();
 
-//             switch (env) {
-//                 case "dev":
-//                     networkAlertInterface = NetworkAlerter::networkAlertStub;
-//                     break;
-//                 case "prod":
-//                     networkAlertInterface = NetworkAlerter::networkAlert;
-//                     break;
-//                 default:
-//                     throw new Exception("Environment setting not valid!!");
-//             }
+            switch (env) {
+                case "dev":
+                    networkAlertInterface = NetworkAlerter::networkAlertStub;
+                    break;
+                case "prod":
+                    networkAlertInterface = NetworkAlerter::networkAlert;
+                    break;
+                default:
+                    throw new Exception("Environment setting not valid!!");
+            }
 
             testAlertInCelsius();
             System.out.printf("%d alerts failed.\n", alertFailureCount);

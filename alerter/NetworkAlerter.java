@@ -1,6 +1,7 @@
 package alerter;
 
 public class NetworkAlerter {
+    
     // Dummy function call for production call
     static int networkAlert(float celsius){
         return 200;
