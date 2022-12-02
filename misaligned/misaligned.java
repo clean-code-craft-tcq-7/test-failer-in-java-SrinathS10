@@ -27,17 +27,17 @@ public class misaligned {
         String colorPairStr;
         // double-digit pair number check
         colorPairStr = getColorPairFromIndex(4,4);
-        assert(colorPairStr.contains("Violet") && colorPairStr.contains("Slate"));
+        assert(colorPairStr.contains(majorColors[4]) && colorPairStr.contains(minorColors[4]));
         assert(colorPairStr.substring(3,4).equals("|"));
         assert(colorPairStr.contains("25"));
 
         // single-digit pair number check
         colorPairStr = getColorPairFromIndex(0,1);
-        assert(colorPairStr.contains("Orange") && colorPairStr.contains("White"));
+        assert(colorPairStr.contains(majorColors[0]) && colorPairStr.contains(minorColors[1]));
         assert(colorPairStr.substring(3,4).equals("|"));
 
         colorPairStr = getColorPairFromIndex(2,2);
-        assert(colorPairStr.contains("Black") && colorPairStr.contains("Green"));
+        assert(colorPairStr.contains(majorColors[2]) && colorPairStr.contains(minorColors[2]));
 
     }
 
