@@ -1,17 +1,13 @@
 public class tshirts{
     static String getTshirtSize(int cms) {
+        // assuming size-38 is M and size-42 is L
         if(cms < 38) {
             return "S";
-        } else if(cms > 38 && cms < 42) {
+        } else if(cms >= 38 && cms < 42) {
             return "M";
         } else {
             return "L";
         }
-    }
-
-    public static void main(String[] args) { 
-        testTshirtSize();
-        System.out.println("All is well (maybe!)");
     }
 
     static void testTshirtSize(){
@@ -19,7 +15,11 @@ public class tshirts{
         assert(getTshirtSize(40) == "M");
         assert(getTshirtSize(43) == "L");
         assert(getTshirtSize(42) == "L");
-        // below test case should fail
         assert(getTshirtSize(38) == "M");
+    }
+
+    public static void main(String[] args) { 
+        testTshirtSize();
+        System.out.println("All is well (maybe!)");
     }
 }
