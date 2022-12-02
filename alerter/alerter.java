@@ -7,6 +7,7 @@ public class alerter {
     static int alertFailureCount = 0;
     private static String env;
     private static Properties config;
+    static NetworkAlertInterface networkAlertInterface;
 
     static int networkAlert(float celsius){
         return 200;
